@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import HighlightSection from './HighlightSection';
 
 const HighlightContainer = styled.div`
   display: flex;
@@ -24,28 +25,13 @@ function UserHighlights({ users }) {
   return (
     <HighlightContainer>
       <div>
-        <h3>Primeiros</h3>
-        <HighlightList>
-          {firstStars.map((user) => (
-            <ListItem key={user.id}>{user.name} - {user.followers} seguidores</ListItem>
-          ))}
-        </HighlightList>
+        <HighlightSection title="Primeiros" users={firstStars} />
       </div>
       <div>
-        <h3>Últimos</h3>
-        <HighlightList>
-          {recentStars.map((user) => (
-            <ListItem key={user.id}>{user.name} - {user.followers} seguidores</ListItem>
-          ))}
-        </HighlightList>
+        <HighlightSection title="Últimos" users={recentStars} />
       </div>
       <div>
-        <h3>Populares</h3>
-        <HighlightList>
-          {mostPopular.map((user) => (
-            <ListItem key={user.id}>{user.name} - {user.followers} seguidores</ListItem>
-          ))}
-        </HighlightList>
+        <HighlightSection title="Populares" users={mostPopular} />
       </div>
     </HighlightContainer>
   );
